@@ -783,32 +783,65 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     --'folke/tokyonight.nvim',
-    'AlexvZyl/nordic.nvim',
+    --'AlexvZyl/nordic.nvim',
+    'vague2k/vague.nvim',
     lazy = false,
     priority = 1000, -- Make sure to load this before all the other start plugins.
+    config = function()
+      require('vague').setup {
+        -- optional configuration here
+        transparent = false, -- don't set background
+        style = {
+          -- "none" is the same thing as default. But "italic" and "bold" are also valid options
+          comments = 'italic',
+          conditionals = 'none',
+          functions = 'none',
+          keywords = 'none',
+          headings = 'bold', -- markdown headings
+          operators = 'none',
+          keyword_return = 'none',
+          strings = 'italic',
+          variables = 'none',
+        },
+        -- These are the default colors, but they are overideable.
+        -- Different highlights which may be non related share some colors, so expirement.
+        colors = {
+          bg = '#18191a',
+          fg = '#cdcdcd',
+          floatBorder = '#878787',
+          line = '#282830',
+          comment = '#646477',
+          builtin = '#bad1ce',
+          func = '#be8c8c',
+          string = '#d7b797',
+          number = '#d2a374',
+          property = '#b4b4ce',
+          constant = '#b4b4ce',
+          parameter = '#b9a3ba',
+          visual = '#363738',
+          error = '#d2788c',
+          warning = '#e6be8c',
+          hint = '#8ca0dc',
+          operator = '#96a3b2',
+          keyword = '#7894ab',
+          type = '#a1b3b9',
+          search = '#465362',
+          -- used mostly in git related highlights
+          plus = '#8faf77',
+          delta = '#e6be8c',
+        },
+      }
+    end,
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       -- vim.cmd.colorscheme 'tokyonight-night'
 
-      vim.cmd.colorscheme 'nordic'
+      vim.cmd.colorscheme 'vague'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
-    end,
-    config = function()
-      require('nordic').load()
-      require('nordic').setup {
-        --transparent_bg = true,
-        reduced_blue = true,
-      }
-    end,
-    opts = function(_, opts)
-      opts.transparent = true
-      opts.styles = opts.styles or {}
-      opts.styles.sidebars = 'transparent'
-      opts.styles.floats = 'transparent'
     end,
   },
   -- Highlight todo, notes, etc in comments
@@ -837,7 +870,7 @@ require('lazy').setup({
       --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      statusline.setup { use_icons = true } --vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
