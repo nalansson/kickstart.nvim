@@ -4,4 +4,13 @@
 -- See the kickstart.nvim README for more information
 -- nordic colorscheme config
 
-return {}
+-- plugins/quarto.lua
+return {
+  {
+    'quarto-dev/quarto-nvim',
+    dependencies = {
+      'jmbuhr/otter.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
+  },
+}
