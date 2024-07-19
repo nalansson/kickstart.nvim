@@ -1,7 +1,7 @@
 return {
   'epwalsh/obsidian.nvim',
   version = '*', -- recommended, use latest release instead of latest commit
-  lazy = true,
+  lazy = false,
   ft = 'markdown',
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
   -- event = {
@@ -19,12 +19,12 @@ return {
   opts = {
     workspaces = {
       {
-        name = 'personal_wiki',
+        name = 'personal-wiki',
         path = '/mnt/c/Users/work/Documents/Drive/Personal_Wiki',
       },
       {
-        name = 'notes',
-        path = '/mnt/c/Users/work/Documents/Drive/My_Notes',
+        name = 'work',
+        path = '/mnt/c/Users/work/Documents/Drive/My_Notes/My_Notes',
       },
     },
 
