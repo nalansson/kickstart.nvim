@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -198,6 +198,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>e', '<Cmd>Neotree<CR>')
 vim.keymap.set('n', '<leader>ow', '<Cmd>ObsidianWorkspace<CR>')
 vim.keymap.set('n', '<leader>os', '<Cmd>ObsidianSearch<CR>')
+vim.keymap.set('n', '<leader>ob', '<Cmd>ObsidianBacklinks<CR>')
+vim.keymap.set('n', '<leader>ot', '<Cmd>ObsidianTags<CR>')
+vim.keymap.set('n', '<leader>ol', '<Cmd>ObsidianLink<CR>')
+vim.keymap.set('n', '<leader>oln', '<Cmd>ObsidianTags<CR>')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
