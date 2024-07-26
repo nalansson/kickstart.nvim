@@ -195,6 +195,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- CUSTOM KEYMAPS
 --
+vim.keymap.set('v', '<leader>t', '!pandoc -t markdown-simple_tables<CR>', { silent = true, desc = 'cleanup markdown tables' })
 vim.keymap.set('n', '<leader>e', '<Cmd>Neotree<CR>')
 vim.keymap.set('n', '<leader>ow', '<Cmd>ObsidianWorkspace<CR>')
 vim.keymap.set('n', '<leader>os', '<Cmd>ObsidianSearch<CR>')

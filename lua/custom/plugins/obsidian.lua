@@ -19,13 +19,13 @@ return {
   opts = {
     workspaces = {
       {
-        name = 'personal-wiki',
-        path = '/mnt/c/Users/work/Documents/Drive/Personal_Wiki',
-      },
-      {
         name = 'work',
-        path = '/mnt/c/Users/work/Documents/Drive/My_Notes/My_Notes',
+        path = '~/Documents/My_Notes/',
       },
+      --     {
+      --       name = 'work',
+      --       path = '/mnt/c/Users/work/Documents/Drive/My_Notes/My_Notes',
+      --     },
     },
 
     -- see below for full list of options 👇
